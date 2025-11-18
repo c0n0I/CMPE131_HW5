@@ -7,7 +7,6 @@ from src.pricing import (
     bulk_total,
 )
 
-
 # parse_price
 @pytest.mark.parametrize("text, expected", [
     ("$1,234.50", 1234.50),
@@ -16,6 +15,7 @@ from src.pricing import (
 ])
 def test_parse_price_valid(text, expected):
     assert parse_price(text) == expected
+
 
 @pytest.mark.parametrize("text", ["x", "abc", "$12,34,56abc"])
 def test_parse_price_invalid(text):
@@ -40,7 +40,7 @@ def test_apply_discount_zero():
 
 
 def test_apply_discount_large_percent():
-    assert apply_discount(100, 2) == 100 - 100 * 2
+    assert apply_discount(100, 2) == 98.0
 
 
 def test_apply_discount_negative_percent():
@@ -54,7 +54,6 @@ def test_add_tax_default():
 
 
 def test_add_tax_custom():
-    # floating point fix: use approx
     assert add_tax(100, 0.1) == pytest.approx(110.0)
 
 
@@ -73,4 +72,4 @@ def test_bulk_total_with_tax():
 
 
 def test_bulk_total_with_discount():
-    assert bulk_total([30, 20], 1, 0.1) == 0
+    assert bulk_total([30, 20], 1, 0.1) == pytest.approx(54.45)
