@@ -18,6 +18,8 @@ You would use a regresion test when you change a your code and want to make sure
 Pytest discover is a python testing framework that identifies and collect test files, functions, and classes within a project. It finds and runs tests based on naming convention. For example, test files must be named _test_*.py_ or _*_test.py_ and test functions must be named _test..._. Once the tests are discovered, Pytest can executed and it will discover test files, run them, and reports any failures.
 
 ## Pytest Features
-@pytest.mark.parametrize, runs same test with multiple inputs, which is used in the unit tests
-pytest.raises, used to validate exception handling, which is used in unit tests
-pytest.approx, used to compare floating-point numbers with rounding, which is used in unit tests
+- @pytest.mark.parametrize, runs same test with multiple inputs, which is used in the unit tests
+
+- pytest.raises, used to validate exception handling, which is used in unit tests
+
+- pytest.approx, used to compare floating-point numbers with rounding, which is used in unit tests
