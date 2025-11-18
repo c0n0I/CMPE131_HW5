@@ -13,12 +13,10 @@ def format_currency(value):
     return "$" + f"{float(value):0.2f}"
 
 def apply_discount(price, percent):
-    """
-    Reduce price by 'percent' (e.g., 10 means 10%).
-    """
     if percent < 0:
         raise ValueError("percent must be >= 0")
-    return price - price * percent  # BUG: should be (percent / 100)
+    return price - price * (percent / 100)
+
 
 def add_tax(price, rate=0.07):
     if rate < 0:
@@ -31,4 +29,3 @@ def bulk_total(prices, discount_percent=0, tax_rate=0.07):
         subtotal += float(p)
     after_discount = apply_discount(subtotal, discount_percent)
     return add_tax(after_discount, tax_rate)
-
