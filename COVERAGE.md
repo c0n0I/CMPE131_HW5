@@ -1,12 +1,7 @@
 #Coverage Report
 ## Summary of Coverage Results
-Name              Stmts   Miss  Cover   Missing
------------------------------------------------
-src\__init__.py       0      0   100%
-src\order_io.py      20      2    90%   12, 15
-src\pricing.py       22      0   100%
------------------------------------------------
-TOTAL                42      2    95%
+<img width="339" height="149" alt="image" src="https://github.com/user-attachments/assets/955ec118-5dc4-451a-b38b-f693b2bee717" />
+
 
 This shows that pricing.py is 100% covered, while order_io.py is 90% covered with 2 lines that are uncovered (12,15). 
 
